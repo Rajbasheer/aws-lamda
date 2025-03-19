@@ -12,7 +12,7 @@ def lambda_handler(event, context):
         print(f"New file detected: {file_key} in bucket {bucket_name}")
 
         new_key = file_key.replace("raw-data/", "processing/")
-        s3_client.copy.object(
+        s3_client.copy_object(
             Bucket=bucket_name,
             CopySource={'Bucket': bucket_name, 'key': file_key},
             Key=new_key
