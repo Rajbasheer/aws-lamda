@@ -23,7 +23,7 @@ jobs:
 
       -name: Zip lambda Code
       run: |
-        cd lambda_function && zip -r lambda_function.zip
+        cd lambda_function && zip -r lambda_function.zip .
 
       -name: Deploy to AWS Lambda
       env: 
